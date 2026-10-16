@@ -1,0 +1,88 @@
+@use 'variables';
+.cabecera {
+    background-color: variables.$azul;
+    color: variables.$blanco;
+    min-height: 70px;
+    box-shadow: 0 3px 8px rgba(25, 53, 104, 0.15);
+}
+
+.navegacion {
+    width: 95%;
+    max-width: 1200px;
+    min-height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Marca y nombre de la tienda */
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: variables.$blanco;
+    flex-shrink: 0;
+}
+
+.marca img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.marca span {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.marca strong {
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+}
+
+.marca small {
+    color: variables.$amarillo;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* Enlaces del menú */
+.enlaces {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.enlaces a {
+    color: variables.$blanco;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.enlaces a:hover {
+    color: variables.$amarillo;
+}
+
+/* Iconos de la derecha */
+.iconos {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: auto;
+}
+
+.iconos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconos img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}

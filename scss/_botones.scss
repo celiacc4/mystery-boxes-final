@@ -1,0 +1,35 @@
+@use 'variables';
+
+.boton {
+    display: inline-block;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.amarillo {
+    background-color: variables.$amarillo;
+    color: variables.$azul-oscuro;
+    box-shadow: 0 3px 0 #d9a91b;
+}
+
+.azul {
+    background-color: variables.$azul;
+    color: variables.$blanco;
+}
+
+.rojo {
+    background-color: variables.$rojo;
+    color: variables.$blanco;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(25, 53, 104, 0.15);
+}

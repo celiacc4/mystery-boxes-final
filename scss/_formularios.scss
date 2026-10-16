@@ -1,0 +1,50 @@
+@use 'variables';
+
+.formulario {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    background-color: variables.$blanco;
+    border: 1px solid #eee4c4;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(25, 53, 104, 0.10);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.campo label {
+    margin-bottom: 7px;
+    color: variables.$azul-oscuro;
+    font-weight: 700;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd2df;
+    border-radius: 6px;
+    background-color: #fffefa;
+    color: variables.$texto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: 2px solid variables.$azul;
+    outline-offset: 1px;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.formulario .boton {
+    width: 100%;
+}

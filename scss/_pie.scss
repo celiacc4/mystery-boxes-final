@@ -1,0 +1,14 @@
+@use 'variables';
+
+.pie {
+    margin-top: 20px;
+    padding: 22px 15px;
+    background-color: variables.$azul;
+    color: variables.$blanco;
+    text-align: center;
+    font-size: 11px;
+}
+
+.pie p {
+    line-height: 1.6;
+}

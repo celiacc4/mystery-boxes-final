@@ -1,0 +1,139 @@
+@use 'variables';
+
+@media (max-width: 900px) {
+    .navegacion {
+        gap: 15px;
+    }
+
+    .enlaces {
+        gap: 12px;
+    }
+
+    .pasos {
+        flex-wrap: wrap;
+    }
+
+    .paso {
+        flex: 1 1 40%;
+    }
+
+    .detalle {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-inicio {
+        height: 300px;
+    }
+
+    .contenido-hero {
+        padding: 20px;
+    }
+
+    .contenido-hero h1 {
+        font-size: 25px;
+    }
+
+    .contenido-hero p {
+        font-size: 13px;
+    }
+
+    .navegacion {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    .marca {
+        margin-right: auto;
+    }
+
+    .enlaces {
+        order: 3;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .iconos {
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .presentacion,
+    .segunda-vida,
+    .que-es,
+    .vida,
+    .contacto {
+        padding: 35px 10px;
+    }
+
+    .pasos,
+    .beneficios,
+    .detalle,
+    .promocion {
+        flex-direction: column;
+    }
+
+    .paso,
+    .beneficios article {
+        flex: auto;
+        width: 100%;
+    }
+
+    .promocion {
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .detalle {
+        gap: 25px;
+    }
+
+    .producto {
+        width: 45%;
+    }
+
+    .botones-imagen {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .marca strong {
+        font-size: 12px;
+    }
+
+    .enlaces {
+        gap: 10px;
+    }
+
+    .enlaces a {
+        font-size: 11px;
+    }
+
+    .producto {
+        width: 100%;
+    }
+
+    .buscador input {
+        width: 100%;
+    }
+
+    .formulario {
+        padding: 20px;
+    }
+
+    .botones-imagen .boton {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+}
