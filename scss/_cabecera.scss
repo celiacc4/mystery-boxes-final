@@ -1,19 +1,21 @@
+
 @use 'variables';
+
 .cabecera {
     background-color: variables.$azul;
     color: variables.$blanco;
-    min-height: 70px;
+    min-height: 76px;
     box-shadow: 0 3px 8px rgba(25, 53, 104, 0.15);
 }
 
 .navegacion {
     width: 95%;
-    max-width: 1200px;
-    min-height: 70px;
+    max-width: 1300px;
+    min-height: 76px;
     margin: auto;
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 65px;
 }
 
 /* Marca y nombre de la tienda */
@@ -22,30 +24,26 @@
     align-items: center;
     gap: 10px;
     color: variables.$blanco;
+    text-decoration: none;
     flex-shrink: 0;
 }
 
 .marca img {
-    width: 75px;
-    height: 75px;
+    width: 58px;
+    height: 58px;
     object-fit: contain;
 }
 
 .marca span {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 0;
 }
 
 .marca strong {
     font-family: 'Merriweather', serif;
-    font-size: 14px;
-}
-
-.marca small {
-    color: variables.$amarillo;
-    font-size: 9px;
-    letter-spacing: 1px;
+    font-size: 17px;
+    white-space: nowrap;
 }
 
 /* Enlaces del menú */
@@ -53,13 +51,14 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 30px;
 }
 
 .enlaces a {
     color: variables.$blanco;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
+    text-decoration: none;
     transition: color 0.2s;
 }
 
@@ -71,7 +70,7 @@
 .iconos {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 12px;
     margin-left: auto;
 }
 
@@ -82,7 +81,12 @@
 }
 
 .iconos img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
+    transition: transform 0.2s;
+}
+
+.iconos a:hover img {
+    transform: scale(1.1);
 }
