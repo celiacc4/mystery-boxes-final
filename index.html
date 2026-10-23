@@ -14,6 +14,10 @@
 </head>
 
 <body>
+    <audio id="musica-fondo" autoplay loop preload="auto">
+        <source src="media/ambiente.mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio>
 
     <header class="cabecera">
         <nav class="navegacion">
@@ -257,6 +261,16 @@
         <p><a href="https://example.com">Mystery-Boxes</a> © 2026 by <a href="https://example.com">Celia Cosano Carmona</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></p>
     </footer>
 
+    <script>
+        const musica = document.getElementById("musica-fondo");
+
+        musica.volume = 0.08;
+
+        musica.play().catch(() => {
+            // El navegador puede bloquear la reproducción automática.
+        });
+    </script>
+    
 </body>
 
 </html>

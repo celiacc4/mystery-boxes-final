@@ -13,6 +13,10 @@
 </head>
 
 <body>
+    <audio id="musica-fondo" autoplay loop preload="auto">
+        <source src="media/ambiente.mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio>
 
     <header class="cabecera">
         <nav class="navegacion">
@@ -45,6 +49,24 @@
     </header>
 
     <main>
+        <section class="video-funcionamiento">
+            <h1>¿Cómo funciona Mystery Box Store?</h1>
+            <p>
+                Descubre cómo damos una segunda vida a productos únicos
+                y preparamos cada caja sorpresa.
+            </p> 
+            <div class="contenedor-video">
+                <video class="video-pc" controls preload="metadata">
+                    <source src="media/funcionamiento-pc.mp4" type="video/mp4">
+                    Tu navegador no admite la reproducción de vídeo.
+                </video>
+
+                <video class="video-movil" controls preload="metadata" playsinline>
+                    <source src="media/funcionamiento-movil.mp4" type="video/mp4">
+                    Tu navegador no admite la reproducción de vídeo.
+                </video>
+            </div>
+        </section>
 
         <section class="productos">
 
@@ -214,6 +236,33 @@
     <footer class="pie">
         <p><a href="https://example.com">Mystery-Boxes</a> © 2026 by <a href="https://example.com">Celia Cosano Carmona</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></p>
     </footer>
+    
+    <script>
+        const musica = document.getElementById("musica-fondo");
+        const videos = document.querySelectorAll(".contenedor-video video");
+
+        musica.volume = 0.08;
+
+        musica.play().catch(() => {
+            // El navegador puede bloquear la reproducción automática.
+        });
+
+        videos.forEach(video => {
+            video.addEventListener("play", () => {
+                musica.pause();
+            });
+
+            video.addEventListener("pause", () => {
+                if (!video.ended) {
+                    musica.play().catch(() => {});
+                }
+            });
+
+            video.addEventListener("ended", () => {
+                musica.play().catch(() => {});
+            });
+        });
+    </script>
 
 </body>
 

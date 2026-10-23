@@ -589,6 +589,50 @@ img {
   font-size: 15px;
 }
 
+.video-funcionamiento {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto 45px;
+  text-align: center;
+}
+
+.video-funcionamiento h2 {
+  color: #193568;
+  margin-bottom: 12px;
+}
+
+.video-funcionamiento p {
+  max-width: 700px;
+  margin: 0 auto 22px;
+  color: #26334a;
+  line-height: 1.6;
+}
+
+.contenedor-video {
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid #193568;
+  border-radius: 14px;
+  box-shadow: 0 5px 14px rgba(25, 53, 104, 0.16);
+  background-color: #193568;
+}
+
+.contenedor-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Por defecto, mostrar el vídeo horizontal */
+.video-movil {
+  display: none !important;
+}
+
+.video-pc {
+  display: block;
+}
+
 .detalle {
   display: flex;
   align-items: center;
@@ -720,6 +764,9 @@ img {
   .detalle {
     gap: 25px;
   }
+  .video-funcionamiento {
+    max-width: 100%;
+  }
 }
 @media (max-width: 700px) {
   .hero-inicio {
@@ -788,6 +835,26 @@ img {
     flex-direction: column;
     align-items: center;
   }
+  .video-funcionamiento {
+    width: 92%;
+    margin: 22px auto 30px;
+  }
+  .video-funcionamiento h2 {
+    font-size: 22px;
+  }
+  .video-funcionamiento p {
+    font-size: 14px;
+  }
+  .contenedor-video {
+    border-radius: 9px;
+  }
+  /* En móviles, mostrar el vídeo vertical */
+  .video-pc {
+    display: none !important;
+  }
+  .video-movil {
+    display: block !important;
+  }
 }
 @media (max-width: 450px) {
   .marca strong {
@@ -811,6 +878,12 @@ img {
   .botones-imagen .boton {
     padding: 10px 14px;
     font-size: 11px;
+  }
+  .video-funcionamiento h2 {
+    font-size: 19px;
+  }
+  .video-funcionamiento p {
+    font-size: 13px;
   }
 }
 

@@ -102,3 +102,50 @@
     color: variables.$rojo;
     font-size: 15px;
 }
+
+
+.video-funcionamiento {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto 45px;
+    text-align: center;
+}
+
+.video-funcionamiento h2 {
+    color: variables.$azul-oscuro;
+    margin-bottom: 12px;
+}
+
+.video-funcionamiento p {
+    max-width: 700px;
+    margin: 0 auto 22px;
+    color: variables.$texto;
+    line-height: 1.6;
+}
+
+.contenedor-video {
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid variables.$azul-oscuro;
+    border-radius: 14px;
+    box-shadow: 0 5px 14px rgba(25, 53, 104, 0.16);
+    background-color: variables.$azul-oscuro;
+}
+
+
+.contenedor-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Por defecto, mostrar el vídeo horizontal */
+.video-movil {
+    display: none !important;
+}
+
+.video-pc {
+    display: block;
+}
+
