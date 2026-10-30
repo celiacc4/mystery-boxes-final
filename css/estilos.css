@@ -238,16 +238,26 @@ img {
   line-height: 1.7;
 }
 
-.segunda-vida h3 {
-  margin-bottom: 15px;
-}
-
 .segunda-vida > p,
 .vida > p,
 .que-es > p {
   max-width: 680px;
   margin: 12px auto;
   line-height: 1.7;
+}
+
+/* Bootstrap resetea los títulos; se restauran los del diseño original */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+.que-es > h3,
+.vida > h3,
+.segunda-vida > h3 {
+  font-size: 1.17em;
+  margin-bottom: 12px;
 }
 
 .imagen-principal {
@@ -316,17 +326,25 @@ img {
   font-size: 12px;
 }
 
-.pasos {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 15px;
-  margin-top: 30px;
+/* Carrusel de cajas dentro de la promoción */
+.carrusel-cajas {
+  width: 300px;
+  max-width: 100%;
+  flex-shrink: 0;
 }
 
+.carrusel-cajas .carousel-inner {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(25, 53, 104, 0.17);
+}
+
+.carrusel-cajas img {
+  height: 280px;
+  object-fit: cover;
+}
+
+/* Tarjetas de pasos (Bootstrap row/col) */
 .paso {
-  flex: 1;
-  min-width: 0;
   min-height: 180px;
   padding: 25px 18px;
   background-color: #315bb0;
@@ -362,21 +380,8 @@ img {
   line-height: 1.7;
 }
 
-.vida > h3 {
-  margin-bottom: 15px;
-}
-
-.beneficios {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 15px;
-  margin-top: 30px;
-}
-
-.beneficios article {
-  flex: 1;
-  min-width: 0;
+/* Tarjetas de beneficios (Bootstrap row/col) */
+.beneficio {
   padding: 22px;
   background-color: #315bb0;
   color: #ffffff;
@@ -386,17 +391,17 @@ img {
   transition: transform 0.2s;
 }
 
-.beneficios article:hover {
+.beneficio:hover {
   transform: translateY(-4px);
 }
 
-.beneficios h3 {
+.beneficio h3 {
   color: #ffd23f;
   font-family: "Merriweather", serif;
   font-size: 14px;
 }
 
-.beneficios p {
+.beneficio p {
   color: #ffffff;
   font-size: 11px;
   line-height: 1.7;
@@ -418,17 +423,6 @@ img {
   margin-bottom: 18px;
 }
 
-.segunda-vida h3,
-.que-es > h3,
-.vida > h3 {
-  margin-bottom: 12px;
-}
-
-.pasos,
-.beneficios {
-  margin-top: 25px;
-}
-
 .separador-contacto {
   width: 100%;
   height: 2px;
@@ -437,6 +431,207 @@ img {
   border-radius: 2px;
 }
 
+/* Formulario de contacto con componentes de Bootstrap */
+.contacto .formulario {
+  text-align: left;
+}
+
+.contacto .form-label {
+  color: #193568;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.contacto .form-control {
+  padding: 12px;
+  border: 1px solid #cbd2df;
+  border-radius: 6px;
+  background-color: #fffefa;
+  color: #26334a;
+  font-size: 13px;
+}
+
+.contacto .form-control:focus {
+  border-color: #315bb0;
+  box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.contacto .alert {
+  font-size: 13px;
+  text-align: left;
+}
+
+/* Cabecera con Bootstrap navbar */
+.navbar .navegacion {
+  gap: 65px;
+}
+
+.navbar .navbar-toggler {
+  margin-left: auto;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navegacion {
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 12px 0;
+  }
+  .navbar .navbar-collapse {
+    width: 100%;
+  }
+  .navbar .enlaces {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px 0;
+  }
+  .navbar .iconos {
+    margin-left: 0;
+    padding-bottom: 10px;
+  }
+}
+/* Pie con rejilla de Bootstrap */
+.pie .enlaces-pie a {
+  font-size: 12px;
+}
+
+/* Slider de imágenes con CSS (sin JavaScript) */
+.slider-css {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 360px;
+  margin: 35px auto 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(25, 53, 104, 0.16);
+  background-color: #193568;
+}
+
+.slider-css-diapositiva {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f1ea;
+  opacity: 0;
+  animation: slider-css-fundido 16s infinite;
+}
+
+.slider-css-diapositiva:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slider-css-diapositiva:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.slider-css-diapositiva:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.slider-css-diapositiva:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.slider-css-diapositiva img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.slider-css-diapositiva figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px;
+  background-color: rgba(21, 48, 100, 0.7);
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.slider-css:hover .slider-css-diapositiva {
+  animation-play-state: paused;
+}
+
+@keyframes slider-css-fundido {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  4% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  22% {
+    opacity: 1;
+  }
+  27%, 100% {
+    opacity: 0;
+  }
+}
+/* Animaciones de entrada y de énfasis */
+@keyframes entrada-arriba {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pulso-boton {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 210, 63, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 210, 63, 0);
+  }
+}
+@keyframes rebote {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.contenido-hero h1 {
+  animation: entrada-arriba 0.8s ease-out both;
+}
+
+.contenido-hero p {
+  animation: entrada-arriba 0.8s ease-out 0.2s both;
+}
+
+.contenido-hero .boton {
+  animation: pulso-boton 2s ease-in-out 1s infinite;
+}
+
+.paso:hover .numero {
+  animation: rebote 0.6s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider-css-diapositiva,
+  .contenido-hero h1,
+  .contenido-hero p,
+  .contenido-hero .boton,
+  .paso:hover .numero {
+    animation: none;
+  }
+  .slider-css-diapositiva:nth-child(1) {
+    opacity: 1;
+  }
+}
 .formulario {
   max-width: 650px;
   margin: auto;
@@ -885,6 +1080,191 @@ img {
   .video-funcionamiento p {
     font-size: 13px;
   }
+}
+/* Páginas de registro e inicio de sesión (Bootstrap + estilos del proyecto) */
+.pagina-acceso {
+  padding: 60px 0;
+}
+
+.pagina-acceso h1 {
+  text-align: center;
+}
+
+.tarjeta-acceso {
+  max-width: 560px;
+  margin: auto;
+  background-color: #ffffff;
+  border: 1px solid #eee4c4;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(25, 53, 104, 0.1);
+}
+
+.pagina-acceso .form-label {
+  color: #193568;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.pagina-acceso .form-control {
+  padding: 12px;
+  border: 1px solid #cbd2df;
+  border-radius: 6px;
+  background-color: #fffefa;
+  color: #26334a;
+  font-size: 13px;
+}
+
+.pagina-acceso .form-control:focus {
+  border-color: #315bb0;
+  box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.pagina-acceso .form-check-input:checked {
+  background-color: #315bb0;
+  border-color: #315bb0;
+}
+
+.pagina-acceso .form-check-input:focus {
+  border-color: #315bb0;
+  box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.pagina-acceso .form-check-label,
+.pagina-acceso .form-text {
+  font-size: 12px;
+}
+
+.pagina-acceso .enlace-acceso {
+  color: #315bb0;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.pagina-acceso .alert {
+  font-size: 13px;
+}
+
+.pagina-acceso .texto-cambio {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Modal de avisos (Bootstrap modal con los colores del proyecto) */
+.tarjeta-modal {
+  border: 1px solid #eee4c4;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(25, 53, 104, 0.2);
+  color: #26334a;
+}
+
+.tarjeta-modal .modal-header {
+  border-bottom: 2px solid #eee4c4;
+}
+
+.tarjeta-modal .modal-title {
+  color: #315bb0;
+  font-family: "Merriweather", serif;
+  font-size: 18px;
+}
+
+.tarjeta-modal .modal-body {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.tarjeta-modal .modal-footer {
+  border-top: none;
+  justify-content: center;
+}
+
+/* Página de pago (Bootstrap checkout con los colores del proyecto) */
+.pagina-pago {
+  padding: 50px 0 40px;
+}
+
+.pagina-pago h1 {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.pagina-pago h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.pagina-pago .badge {
+  background-color: #315bb0;
+  color: #ffffff;
+}
+
+.pagina-pago .list-group-item {
+  border-color: #eee4c4;
+  background-color: #ffffff;
+  color: #26334a;
+  font-size: 13px;
+}
+
+.pagina-pago .list-group-item:last-child {
+  background-color: #E5ECFA;
+  color: #193568;
+}
+
+.pagina-pago .resumen-total {
+  font-size: 16px;
+}
+
+.pagina-pago .form-label {
+  color: #193568;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.pagina-pago .form-control,
+.pagina-pago .form-select {
+  padding: 12px;
+  border: 1px solid #cbd2df;
+  border-radius: 6px;
+  background-color: #fffefa;
+  color: #26334a;
+  font-size: 13px;
+}
+
+.pagina-pago .form-control:focus,
+.pagina-pago .form-select:focus {
+  border-color: #315bb0;
+  box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.pagina-pago .form-check-label {
+  font-size: 13px;
+}
+
+.pagina-pago .form-check-input:checked {
+  background-color: #315bb0;
+  border-color: #315bb0;
+}
+
+.pagina-pago .form-check-input:focus {
+  border-color: #315bb0;
+  box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.pagina-pago hr {
+  border-color: #eee4c4;
+  opacity: 1;
+}
+
+.pagina-pago .boton {
+  font-size: 13px;
+  padding: 14px 22px;
+}
+
+.pagina-pago .texto-seguridad {
+  font-size: 12px;
+  color: #193568;
 }
 
 /*# sourceMappingURL=estilos.css.map */

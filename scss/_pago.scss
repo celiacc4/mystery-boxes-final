@@ -1,0 +1,90 @@
+@use 'variables';
+
+/* Página de pago (Bootstrap checkout con los colores del proyecto) */
+
+.pagina-pago {
+    padding: 50px 0 40px;
+}
+
+.pagina-pago h1 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.pagina-pago h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.pagina-pago .badge {
+    background-color: variables.$azul;
+    color: variables.$blanco;
+}
+
+.pagina-pago .list-group-item {
+    border-color: #eee4c4;
+    background-color: variables.$blanco;
+    color: variables.$texto;
+    font-size: 13px;
+}
+
+.pagina-pago .list-group-item:last-child {
+    background-color: #E5ECFA;
+    color: variables.$azul-oscuro;
+}
+
+.pagina-pago .resumen-total {
+    font-size: 16px;
+}
+
+.pagina-pago .form-label {
+    color: variables.$azul-oscuro;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.pagina-pago .form-control,
+.pagina-pago .form-select {
+    padding: 12px;
+    border: 1px solid #cbd2df;
+    border-radius: 6px;
+    background-color: #fffefa;
+    color: variables.$texto;
+    font-size: 13px;
+}
+
+.pagina-pago .form-control:focus,
+.pagina-pago .form-select:focus {
+    border-color: variables.$azul;
+    box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.pagina-pago .form-check-label {
+    font-size: 13px;
+}
+
+.pagina-pago .form-check-input:checked {
+    background-color: variables.$azul;
+    border-color: variables.$azul;
+}
+
+.pagina-pago .form-check-input:focus {
+    border-color: variables.$azul;
+    box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.pagina-pago hr {
+    border-color: #eee4c4;
+    opacity: 1;
+}
+
+.pagina-pago .boton {
+    font-size: 13px;
+    padding: 14px 22px;
+}
+
+.pagina-pago .texto-seguridad {
+    font-size: 12px;
+    color: variables.$azul-oscuro;
+}

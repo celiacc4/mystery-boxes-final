@@ -1,0 +1,72 @@
+@use 'variables';
+
+/* Páginas de registro e inicio de sesión (Bootstrap + estilos del proyecto) */
+
+.pagina-acceso {
+    padding: 60px 0;
+}
+
+.pagina-acceso h1 {
+    text-align: center;
+}
+
+.tarjeta-acceso {
+    max-width: 560px;
+    margin: auto;
+    background-color: variables.$blanco;
+    border: 1px solid #eee4c4;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(25, 53, 104, 0.10);
+}
+
+.pagina-acceso .form-label {
+    color: variables.$azul-oscuro;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.pagina-acceso .form-control {
+    padding: 12px;
+    border: 1px solid #cbd2df;
+    border-radius: 6px;
+    background-color: #fffefa;
+    color: variables.$texto;
+    font-size: 13px;
+}
+
+.pagina-acceso .form-control:focus {
+    border-color: variables.$azul;
+    box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.pagina-acceso .form-check-input:checked {
+    background-color: variables.$azul;
+    border-color: variables.$azul;
+}
+
+.pagina-acceso .form-check-input:focus {
+    border-color: variables.$azul;
+    box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.pagina-acceso .form-check-label,
+.pagina-acceso .form-text {
+    font-size: 12px;
+}
+
+.pagina-acceso .enlace-acceso {
+    color: variables.$azul;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.pagina-acceso .alert {
+    font-size: 13px;
+}
+
+.pagina-acceso .texto-cambio {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+}

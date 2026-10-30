@@ -1,0 +1,30 @@
+@use 'variables';
+
+/* Modal de avisos (Bootstrap modal con los colores del proyecto) */
+
+.tarjeta-modal {
+    border: 1px solid #eee4c4;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(25, 53, 104, 0.20);
+    color: variables.$texto;
+}
+
+.tarjeta-modal .modal-header {
+    border-bottom: 2px solid #eee4c4;
+}
+
+.tarjeta-modal .modal-title {
+    color: variables.$azul;
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+}
+
+.tarjeta-modal .modal-body {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.tarjeta-modal .modal-footer {
+    border-top: none;
+    justify-content: center;
+}

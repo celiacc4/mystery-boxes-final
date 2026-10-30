@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystery Boxes - Inicio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
@@ -19,33 +19,42 @@
         Tu navegador no admite la reproducción de audio.
     </audio>
 
+    <!-- CABECERA: Bootstrap navbar colapsable en móviles -->
     <header class="cabecera">
-        <nav class="navegacion">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="navegacion">
 
-            <a href="index.html" class="marca">
-                <img src="img/logo.webp" alt="Logo Mystery Box Store">
-                <span>
-                    <strong>Mystery Box Store</strong>
-                </span>
-            </a>
-
-            <div class="enlaces">
-                <a href="index.html">Inicio</a>
-                <a href="productos.html">Productos</a>
-                <a href="#como-funciona">Cómo funciona</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-
-            <div class="iconos">
-                <a href="productos.html" aria-label="Ver productos">
-                    <img src="img/carrito.webp" alt="Carrito">
+                <a href="index.html" class="marca">
+                    <img src="img/logo.webp" alt="Logo Mystery Box Store">
+                    <span>
+                        <strong>Mystery Box Store</strong>
+                    </span>
                 </a>
 
-                <a href="#" aria-label="Usuario">
-                    <img src="img/usuario.webp" alt="Usuario">
-                </a>
-            </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Mostrar menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <div class="enlaces">
+                        <a href="index.html">Inicio</a>
+                        <a href="productos.html">Productos</a>
+                        <a href="#como-funciona">Cómo funciona</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+
+                    <div class="iconos">
+                        <a aria-label="Carrito">
+                            <img src="img/carrito.webp" alt="Carrito">
+                        </a>
+
+                        <a href="inicio-sesion.html" aria-label="Usuario">
+                            <img src="img/usuario.webp" alt="Usuario">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </nav>
     </header>
 
@@ -71,6 +80,31 @@
 
         </section>
 
+        <!-- SLIDER CSS: diapositivas con fundido por @keyframes, sin JavaScript -->
+        <section class="slider-css" aria-label="Galería de Mystery Boxes">
+
+            <figure class="slider-css-diapositiva">
+                <img src="img/mystery-box-gold.webp" alt="Mystery Box Gold">
+                <figcaption>Mystery Box Gold</figcaption>
+            </figure>
+
+            <figure class="slider-css-diapositiva">
+                <img src="img/mystery-box-platino.webp" alt="Mystery Box Platino">
+                <figcaption>Mystery Box Platino</figcaption>
+            </figure>
+
+            <figure class="slider-css-diapositiva">
+                <img src="img/mystery-box-diamante.webp" alt="Mystery Box Diamante">
+                <figcaption>Mystery Box Diamante</figcaption>
+            </figure>
+
+            <figure class="slider-css-diapositiva">
+                <img src="img/mystery-box-coleccionista.webp" alt="Mystery Box Coleccionista">
+                <figcaption>Mystery Box Coleccionista</figcaption>
+            </figure>
+
+        </section>
+
         <section class="que-es" id="como-funciona">
 
             <h2>¿QUÉ ES UNA MYSTERY BOX?</h2>
@@ -82,45 +116,55 @@
                 una segunda oportunidad.
             </p>
 
-            <div class="pasos">
+            <!-- PASOS: rejilla de Bootstrap (1, 2 o 4 columnas según el tamaño de pantalla) -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-1">
 
-                <article class="paso">
-                    <span class="numero">01</span>
-                    <h3>Recibimos</h3>
-                    <p>
-                        Personas nos envían objetos que ya no utilizan.
-                    </p>
-                </article>
+                <div class="col">
+                    <article class="paso h-100">
+                        <span class="numero">01</span>
+                        <h3>Recibimos</h3>
+                        <p>
+                            Personas nos envían objetos que ya no utilizan.
+                        </p>
+                    </article>
+                </div>
 
-                <article class="paso">
-                    <span class="numero">02</span>
-                    <h3>Revisamos</h3>
-                    <p>
-                        Seleccionamos aquellos que merecen una segunda oportunidad.
-                    </p>
-                </article>
+                <div class="col">
+                    <article class="paso h-100">
+                        <span class="numero">02</span>
+                        <h3>Revisamos</h3>
+                        <p>
+                            Seleccionamos aquellos que merecen una segunda oportunidad.
+                        </p>
+                    </article>
+                </div>
 
-                <article class="paso">
-                    <span class="numero">03</span>
-                    <h3>Renovamos</h3>
-                    <p>
-                        Limpiamos, reparamos y preparamos cada producto.
-                    </p>
-                </article>
+                <div class="col">
+                    <article class="paso h-100">
+                        <span class="numero">03</span>
+                        <h3>Renovamos</h3>
+                        <p>
+                            Limpiamos, reparamos y preparamos cada producto.
+                        </p>
+                    </article>
+                </div>
 
-                <article class="paso">
-                    <span class="numero">04</span>
-                    <h3>Creamos la sorpresa</h3>
-                    <p>
-                        Los clasificamos y creamos Mystery Boxes llenas de
-                        productos únicos.
-                    </p>
-                </article>
+                <div class="col">
+                    <article class="paso h-100">
+                        <span class="numero">04</span>
+                        <h3>Creamos la sorpresa</h3>
+                        <p>
+                            Los clasificamos y creamos Mystery Boxes llenas de
+                            productos únicos.
+                        </p>
+                    </article>
+                </div>
 
             </div>
 
         </section>
 
+        <!-- PROMOCIÓN con carrusel de Bootstrap -->
         <section class="promocion">
 
             <div>
@@ -134,6 +178,39 @@
                 <span class="codigo-descuento">
                     Código: PRIMERACAJA
                 </span>
+            </div>
+
+            <div class="carrusel-cajas">
+                <div id="carrusel-cajas" class="carousel slide" data-bs-ride="carousel">
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carrusel-cajas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Caja 1"></button>
+                        <button type="button" data-bs-target="#carrusel-cajas" data-bs-slide-to="1" aria-label="Caja 2"></button>
+                        <button type="button" data-bs-target="#carrusel-cajas" data-bs-slide-to="2" aria-label="Caja 3"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/mystery-box-classic.webp" class="d-block w-100" alt="Mystery Box Classic">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/mystery-box-premium.webp" class="d-block w-100" alt="Mystery Box Premium">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/mystery-box-vip.webp" class="d-block w-100" alt="Mystery Box VIP">
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-cajas" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carrusel-cajas" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+
+                </div>
             </div>
 
             <a href="productos.html" class="boton amarillo">
@@ -160,29 +237,36 @@
                 una nueva oportunidad.
             </p>
 
-            <div class="beneficios">
+            <!-- BENEFICIOS: tarjetas con rejilla de Bootstrap -->
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
 
-                <article>
-                    <h3>Reutiliza</h3>
-                    <p>
-                        Reducimos el desperdicio dando nuevos usos a los productos.
-                    </p>
-                </article>
+                <div class="col">
+                    <article class="beneficio h-100">
+                        <h3>Reutiliza</h3>
+                        <p>
+                            Reducimos el desperdicio dando nuevos usos a los productos.
+                        </p>
+                    </article>
+                </div>
 
-                <article>
-                    <h3>Renovamos</h3>
-                    <p>
-                        Revisamos y preparamos cada artículo antes de ponerlo a la venta.
-                    </p>
-                </article>
+                <div class="col">
+                    <article class="beneficio h-100">
+                        <h3>Renovamos</h3>
+                        <p>
+                            Revisamos y preparamos cada artículo antes de ponerlo a la venta.
+                        </p>
+                    </article>
+                </div>
 
-                <article>
-                    <h3>Alarga su vida</h3>
-                    <p>
-                        Utilizar algo de nuevo también es una forma de consumir
-                        de manera responsable.
-                    </p>
-                </article>
+                <div class="col">
+                    <article class="beneficio h-100">
+                        <h3>Alarga su vida</h3>
+                        <p>
+                            Utilizar algo de nuevo también es una forma de consumir
+                            de manera responsable.
+                        </p>
+                    </article>
+                </div>
 
             </div>
 
@@ -225,31 +309,40 @@
 
             <h2>CONTACTO</h2>
 
-            <form class="formulario">
+            <!-- FORMULARIO: componentes de Bootstrap con validación -->
+            <form class="formulario needs-validation" id="form-contacto" novalidate>
 
-                <div class="campo">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="name" required>
+                        <div class="invalid-feedback">Introduce tu nombre.</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
+                        <div class="invalid-feedback">Introduce un correo electrónico válido.</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="asunto" class="form-label">Asunto</label>
+                        <input type="text" class="form-control" id="asunto" name="asunto">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="5"></textarea>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="boton azul w-100">Enviar</button>
+                    </div>
+
                 </div>
 
-                <div class="campo">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
 
-                <div class="campo">
-                    <label for="asunto">Asunto</label>
-                    <input type="text" id="asunto" name="asunto">
-                </div>
-
-                <div class="campo">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
-                </div>
-
-                <button type="submit" class="boton azul">
-                    Enviar
-                </button>
 
             </form>
 
@@ -258,9 +351,50 @@
     </main>
 
     <footer class="pie">
-        <p><a href="https://example.com">Mystery-Boxes</a> © 2026 by <a href="https://example.com">Celia Cosano Carmona</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></p>
+        <div class="container">
+            <div class="row gy-3 align-items-center">
+
+                <div class="col-md-4 text-center text-md-start">
+                    <strong class="d-block mb-1">Mystery Box Store</strong>
+                    <span>Descubre productos únicos y dales una segunda vida.</span>
+                </div>
+
+                <div class="col-md-4">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 mb-0 enlaces-pie">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="#como-funciona">Cómo funciona</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="inicio-sesion.html">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 text-center text-md-end">
+                    <p class="mb-0"><a href="https://example.com">Mystery-Boxes</a> © 2026 by <a href="https://example.com">Celia Cosano Carmona</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></p>
+                </div>
+
+            </div>
+        </div>
     </footer>
 
+    <!-- MODAL DE AVISOS: se rellena desde JavaScript con mostrarAviso() -->
+    <div class="modal fade" id="modal-aviso" tabindex="-1" aria-labelledby="modal-aviso-titulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content tarjeta-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-aviso-titulo"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="modal-aviso-texto"></div>
+                <div class="modal-footer">
+                    <button type="button" class="boton amarillo" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/aviso.js"></script>
     <script>
         const musica = document.getElementById("musica-fondo");
 
@@ -269,8 +403,30 @@
         musica.play().catch(() => {
             // El navegador puede bloquear la reproducción automática.
         });
+
+        (() => {
+            'use strict';
+
+            const formulario = document.getElementById('form-contacto');
+
+            formulario.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                if (!formulario.checkValidity()) {
+                    event.stopPropagation();
+                } else {
+                    // Aquí iría el envío al servidor. De momento solo se muestra un aviso.
+                    mostrarAviso('Mensaje listo', 'Gracias por escribirnos. Todavía no hay servidor conectado, así que el mensaje no se ha enviado.');
+                    formulario.reset();
+                    formulario.classList.remove('was-validated');
+                    return;
+                }
+
+                formulario.classList.add('was-validated');
+            });
+        })();
     </script>
-    
+
 </body>
 
 </html>
