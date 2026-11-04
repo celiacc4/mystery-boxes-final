@@ -1,0 +1,216 @@
+@use 'variables';
+
+/* Tienda de novedades y detalle del producto nuevo (componentes de Bootstrap con los colores del proyecto) */
+
+.pagina-nuevos {
+    padding: 50px 0 60px;
+    text-align: center;
+}
+
+.pagina-nuevos h1 {
+    margin-bottom: 10px;
+}
+
+.intro-nuevos {
+    max-width: 680px;
+    margin: 0 auto 35px;
+    color: variables.$texto;
+    line-height: 1.7;
+}
+
+/* Tarjeta de producto (card de Bootstrap) */
+.tarjeta-producto {
+    border: 1px solid #eee4c4;
+    border-radius: 12px;
+    background-color: variables.$blanco;
+    box-shadow: 0 4px 12px rgba(25, 53, 104, 0.10);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(25, 53, 104, 0.18);
+}
+
+.tarjeta-producto .card-img-top {
+    height: 200px;
+    padding: 15px;
+    object-fit: contain;
+    background-color: #fffefa;
+}
+
+.tarjeta-producto .card-body {
+    text-align: left;
+}
+
+.tarjeta-producto .card-title {
+    color: variables.$azul-oscuro;
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.tarjeta-producto .card-text {
+    color: #5d6573;
+    font-size: 12px;
+}
+
+.precio-tarjeta {
+    margin: 12px 0 0;
+    color: variables.$rojo;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* Etiqueta "Nuevo" (badge de Bootstrap) */
+.badge-nuevo {
+    z-index: 2;
+    padding: 6px 10px;
+    background-color: variables.$amarillo;
+    color: variables.$azul-oscuro;
+    border-radius: 6px;
+    box-shadow: 0 3px 0 #d9a91b;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Botones con los colores del proyecto (btn de Bootstrap) */
+.pagina-nuevos .btn,
+.detalle-nuevo .btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pagina-nuevos .btn:hover,
+.detalle-nuevo .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(25, 53, 104, 0.15);
+}
+
+.detalle-nuevo .btn-primary {
+    background-color: variables.$azul;
+    color: variables.$blanco;
+}
+
+.detalle-nuevo .btn-primary:hover {
+    background-color: variables.$azul-oscuro;
+    color: variables.$blanco;
+}
+
+.detalle-nuevo .btn-danger {
+    background-color: variables.$rojo;
+    color: variables.$blanco;
+}
+
+.detalle-nuevo .btn-danger:hover {
+    background-color: #c4291b;
+    color: variables.$blanco;
+}
+
+/* Detalle del producto nuevo */
+.detalle-nuevo .tarjeta-imagen {
+    padding: 20px;
+    border: 1px solid #eee4c4;
+    border-radius: 14px;
+    background-color: variables.$blanco;
+    box-shadow: 0 5px 15px rgba(25, 53, 104, 0.10);
+}
+
+.detalle-nuevo .tarjeta-imagen img {
+    max-height: 450px;
+    object-fit: contain;
+}
+
+.badge-categoria {
+    padding: 6px 10px;
+    background-color: #E5ECFA;
+    color: variables.$azul-oscuro;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.detalle-nuevo h1 {
+    margin: 12px 0 15px;
+}
+
+.precio-detalle {
+    margin-bottom: 20px;
+    color: variables.$rojo;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.detalle-nuevo .nav-tabs {
+    border-bottom: 2px solid #eee4c4;
+}
+
+.detalle-nuevo .nav-tabs .nav-link {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: variables.$texto;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.detalle-nuevo .nav-tabs .nav-link:hover,
+.detalle-nuevo .nav-tabs .nav-link:focus {
+    color: variables.$azul;
+}
+
+.detalle-nuevo .nav-tabs .nav-link.active {
+    background: none;
+    color: variables.$azul;
+    border-bottom-color: variables.$amarillo;
+}
+
+.detalle-nuevo .tab-content {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.detalle-nuevo .tab-content ul {
+    padding-left: 22px;
+}
+
+/* Campo de cantidad (input-group de Bootstrap) */
+.detalle-nuevo .input-group-text {
+    background-color: variables.$blanco;
+    border: 1px solid #cbd2df;
+    color: variables.$azul-oscuro;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.detalle-nuevo .cantidad-input {
+    max-width: 110px;
+    padding: 12px;
+    border: 1px solid #cbd2df;
+    background-color: #fffefa;
+    color: variables.$texto;
+    font-size: 13px;
+}
+
+.detalle-nuevo .cantidad-input:focus {
+    border-color: variables.$azul;
+    box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.separador-nuevo {
+    height: 2px;
+    margin: 0;
+    background-color: variables.$azul-oscuro;
+    border: none;
+    opacity: 1;
+}
+
+.detalle-nuevo h2 {
+    margin-bottom: 25px;
+}
