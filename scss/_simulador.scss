@@ -1,0 +1,377 @@
+@use 'variables';
+
+/* Simulador "Abre tu caja" (componentes de Bootstrap con los colores del proyecto) */
+
+.pagina-simulador {
+    padding: 50px 0 60px;
+    text-align: center;
+}
+
+.pagina-simulador h1 {
+    margin-bottom: 10px;
+}
+
+.pagina-simulador h2 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.intro-simulador {
+    max-width: 680px;
+    margin: 0 auto 30px;
+    color: variables.$texto;
+    line-height: 1.7;
+}
+
+.aviso-simulacion {
+    max-width: 680px;
+    margin: 0 auto 40px;
+    background-color: #E5ECFA;
+    border: 2px solid variables.$azul-oscuro;
+    border-radius: 12px;
+    color: variables.$azul-oscuro;
+    font-size: 13px;
+    text-align: left;
+}
+
+/* Pasos del proceso (card de Bootstrap) */
+.paso-proceso {
+    background-color: variables.$azul;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(25, 53, 104, 0.17);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.paso-proceso:hover {
+    transform: translateY(-4px);
+}
+
+.paso-proceso .card-body {
+    padding: 25px 18px;
+}
+
+.paso-proceso .numero {
+    display: block;
+    margin-bottom: 12px;
+    color: variables.$amarillo;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.paso-proceso .card-title {
+    color: variables.$amarillo;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.paso-proceso .card-text {
+    color: variables.$blanco;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Tarjeta del simulador */
+.caja-simulador {
+    max-width: 780px;
+    background-color: variables.$blanco;
+    border: 1px solid #eee4c4;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(25, 53, 104, 0.10);
+}
+
+.contador-aperturas {
+    color: variables.$azul-oscuro;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Selector de categoría (btn-check + btn-group de Bootstrap) */
+.caja-simulador legend {
+    color: variables.$azul-oscuro;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pagina-simulador .btn-check:checked + .btn {
+    background-color: variables.$azul;
+    border-color: variables.$azul;
+    color: variables.$blanco;
+}
+
+/* Escena 2D de perfil: la tapa se abre girando sobre su bisagra trasera */
+.caja-escena {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 160px;
+    transition: height 0.8s ease-in-out;
+}
+
+/* Al abrirse, la escena crece para dejar sitio a la tapa y a la luz */
+.caja-escena.expandida {
+    height: 300px;
+}
+
+.caja-3d {
+    position: relative;
+    width: 180px;
+    height: 150px;
+}
+
+/* Cuerpo de la caja (frente) */
+.caja-cuerpo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+    background: linear-gradient(180deg, #315bb0, #193568);
+    border: 3px solid variables.$amarillo;
+    border-radius: 8px;
+    transition: box-shadow 0.6s;
+}
+
+.caja-cuerpo span {
+    color: variables.$amarillo;
+    font-family: 'Merriweather', serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* Tapa: su borde izquierdo inferior es la bisagra */
+.caja-tapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(180deg, #3f6cc0, #26467f);
+    border: 3px solid variables.$amarillo;
+    border-radius: 8px;
+    transform-origin: 0% 100%;
+    transition: transform 0.8s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+/* Haz de luz que sube desde el interior al abrirse */
+.caja-luz {
+    position: absolute;
+    top: -130px;
+    left: 12%;
+    z-index: 0;
+    width: 76%;
+    height: 170px;
+    background: linear-gradient(to top, rgba(255, 210, 63, 0.95), rgba(255, 210, 63, 0));
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s, transform 0.8s ease-out;
+}
+
+/* Estados de la caja */
+.caja-3d.temblar {
+    animation: temblar 0.7s ease-in-out;
+}
+
+/* La tapa gira hacia arriba sobre la bisagra, hasta quedar casi vertical */
+.caja-3d.abriendo .caja-tapa {
+    transform: rotate(-70deg);
+}
+
+.caja-3d.abierta .caja-luz {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.caja-3d.abierta .caja-cuerpo {
+    box-shadow: 0 0 30px rgba(255, 210, 63, 0.6);
+}
+
+@keyframes temblar {
+    0%,
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    20% {
+        transform: translateX(-5px) rotate(-1.5deg);
+    }
+
+    40% {
+        transform: translateX(5px) rotate(1.5deg);
+    }
+
+    60% {
+        transform: translateX(-4px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translateX(4px) rotate(1deg);
+    }
+}
+
+/* Objetos que salen de la caja */
+.tarjeta-objeto {
+    border: 1px solid #eee4c4;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(25, 53, 104, 0.10);
+    text-align: left;
+}
+
+.tarjeta-objeto .card-title {
+    color: variables.$azul-oscuro;
+    font-family: 'Merriweather', serif;
+}
+
+.objeto-entrada {
+    opacity: 0;
+    animation: aparecer 0.6s ease-out forwards;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Accordion de categorías */
+.accordion-item {
+    border-color: #eee4c4;
+}
+
+.accordion-button {
+    color: variables.$azul-oscuro;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #E5ECFA;
+    color: variables.$azul;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    border-color: variables.$azul;
+    box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.lista-objetos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.lista-objetos li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee4c4;
+    font-size: 13px;
+}
+
+.lista-objetos li:last-child {
+    border-bottom: none;
+}
+
+/* Etiquetas de rareza (badges de Bootstrap) */
+.rareza-comun {
+    background-color: #cbd2df;
+    color: variables.$texto;
+}
+
+.rareza-rara {
+    background-color: variables.$amarillo;
+    color: variables.$azul-oscuro;
+}
+
+.rareza-muy-rara {
+    background-color: variables.$rojo;
+    color: variables.$blanco;
+}
+
+.rareza-comun,
+.rareza-rara,
+.rareza-muy-rara {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Botones con los colores del proyecto */
+.pagina-simulador .btn {
+    border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pagina-simulador .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(25, 53, 104, 0.15);
+}
+
+.pagina-simulador .btn-primary {
+    background-color: variables.$azul;
+    border-color: variables.$azul;
+    color: variables.$blanco;
+}
+
+.pagina-simulador .btn-primary:hover {
+    background-color: variables.$azul-oscuro;
+    border-color: variables.$azul-oscuro;
+    color: variables.$blanco;
+}
+
+.pagina-simulador .btn-primary:disabled {
+    background-color: #9aaed3;
+    border-color: #9aaed3;
+    transform: none;
+    box-shadow: none;
+}
+
+.pagina-simulador .btn-outline-primary {
+    border-color: variables.$azul;
+    color: variables.$azul;
+}
+
+.pagina-simulador .btn-outline-primary:hover {
+    background-color: variables.$azul;
+    border-color: variables.$azul;
+    color: variables.$blanco;
+}
+
+/* Accesibilidad: sin animaciones para quien las desactiva en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    .caja-3d,
+    .caja-tapa,
+    .caja-cuerpo,
+    .caja-luz,
+    .objeto-entrada {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .objeto-entrada {
+        opacity: 1;
+    }
+}
