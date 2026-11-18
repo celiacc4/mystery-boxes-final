@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Boxes - Tu sorpresa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+</head>
+
+<body>
+    <audio id="musica-fondo" autoplay loop preload="auto">
+        <source src="media/ambiente.mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio>
+
+    <!-- CABECERA: misma navbar que la portada -->
+    <header class="cabecera">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="navegacion">
+
+                <a href="index.html" class="marca">
+                    <img src="img/logo.webp" alt="Logo Mystery Box Store">
+                    <span>
+                        <strong>Mystery Box Store</strong>
+                    </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Mostrar menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <div class="enlaces">
+                        <a href="index.html">Inicio</a>
+                        <a href="productos.html">Productos</a>
+                        <a href="novedades.html" aria-current="page">Novedades</a>
+                        <a href="simulador.html">Abre tu caja</a>
+                        <a href="index.html#contacto">Contacto</a>
+                    </div>
+
+                    <div class="iconos">
+                        <a aria-label="Carrito">
+                            <img src="img/carrito.webp" alt="Carrito">
+                        </a>
+
+                        <a href="inicio-sesion.html" aria-label="Usuario">
+                            <img src="img/usuario.webp" alt="Usuario">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="pagina-confirmacion">
+        <div class="container text-center">
+
+            <h1>Tu sorpresa</h1>
+            <p class="intro-experiencias" id="texto-intro">
+                Tu reserva está lista. Abre la caja para descubrir dónde será.
+            </p>
+
+            <div class="alert alert-info aviso-demo mx-auto" role="note">
+                <strong>Simulación:</strong> el pago y la reserva no son reales. El lugar se elige al azar dentro de la provincia.
+            </div>
+
+            <div class="card caja-simulador mx-auto">
+                <div class="card-body p-4 p-md-5">
+
+                    <!-- CAJA: la misma escena que en el simulador -->
+                    <div class="caja-escena" id="escena" aria-hidden="true">
+                        <div class="caja-3d" id="caja-3d">
+                            <div class="caja-luz"></div>
+                            <div class="caja-cuerpo"><span>MYSTERY BOX</span></div>
+                            <div class="caja-tapa"></div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid d-sm-flex justify-content-sm-center gap-3 mt-4">
+                        <button type="button" class="btn btn-primary btn-lg" id="btn-abrir">Abrir sorpresa</button>
+                    </div>
+
+                    <!-- REVELACIÓN: aparece al terminar la animación -->
+                    <div class="mt-4" id="revelacion" aria-live="polite" hidden>
+                        <p class="fw-bold mb-1">Te toca:</p>
+                        <h2 class="h4 mb-4" id="lugar-revelado"></h2>
+                        <ul class="list-group list-group-flush text-start" id="datos"></ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <a href="novedades.html" class="btn btn-outline-primary btn-lg mt-5">Volver a novedades</a>
+
+        </div>
+    </main>
+
+    <footer class="pie">
+        <div class="container">
+            <div class="row gy-3 align-items-center">
+
+                <div class="col-md-4 text-center text-md-start">
+                    <strong class="d-block mb-1">Mystery Box Store</strong>
+                    <span>Descubre productos únicos y dales una segunda vida.</span>
+                </div>
+
+                <div class="col-md-4">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 mb-0 enlaces-pie">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="novedades.html">Novedades</a></li>
+                        <li><a href="simulador.html">Abre tu caja</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="inicio-sesion.html">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 text-center text-md-end">
+                    <p class="mb-0"><a href="https://example.com">Mystery-Boxes</a> © 2026 by <a href="https://example.com">Celia Cosano Carmona</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const musica = document.getElementById("musica-fondo");
+
+        musica.volume = 0.08;
+
+        musica.play().catch(() => {
+            // El navegador puede bloquear la reproducción automática.
+        });
+
+        (() => {
+            'use strict';
+
+            const params = new URLSearchParams(window.location.search);
+            const boton = document.getElementById('btn-abrir');
+            const caja = document.getElementById('caja-3d');
+            const escena = document.getElementById('escena');
+            const revelacion = document.getElementById('revelacion');
+            const lugarRevelado = document.getElementById('lugar-revelado');
+            const datos = document.getElementById('datos');
+
+            // Zonas de la provincia donde puede estar el lugar (datos de ejemplo)
+            const ZONAS = ['Centro', 'Casco Antiguo', 'Mercado', 'Puerto', 'Parque', 'Estación'];
+
+            // Sin reserva previa no hay sorpresa que abrir
+            if (params.get('tipo') !== 'experiencia') {
+                document.getElementById('texto-intro').textContent = 'No hay ninguna sorpresa pendiente.';
+                boton.disabled = true;
+                return;
+            }
+
+            const lugar = params.get('lugar') || 'Restaurante';
+            const provincia = params.get('provincia') || '';
+
+            // Muestra los datos de la reserva (se usa textContent para no insertar HTML)
+            const pintarDatos = () => {
+                [
+                    'Experiencia: ' + (params.get('nombre') || ''),
+                    'Fecha, hora y personas: ' + (params.get('detalle') || ''),
+                    'Total pagado: ' + (params.get('total') || '')
+                ].forEach((texto) => {
+                    const item = document.createElement('li');
+                    item.className = 'list-group-item';
+                    item.textContent = texto;
+                    datos.appendChild(item);
+                });
+            };
+
+            boton.addEventListener('click', () => {
+                boton.disabled = true;
+                caja.classList.add('temblar');
+
+                // 1. La caja tiembla
+                setTimeout(() => {
+                    caja.classList.remove('temblar');
+                    caja.classList.add('abriendo');
+                    escena.classList.add('expandida');
+                }, 700);
+
+                // 2. La tapa se levanta y sale la luz
+                setTimeout(() => {
+                    caja.classList.add('abierta');
+                }, 1400);
+
+                // 3. Se revela el lugar
+                setTimeout(() => {
+                    const zona = ZONAS[Math.floor(Math.random() * ZONAS.length)];
+                    lugarRevelado.textContent = lugar + ' ' + zona + ' · ' + provincia;
+                    pintarDatos();
+                    revelacion.hidden = false;
+                    boton.textContent = 'Sorpresa abierta';
+                }, 1500);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

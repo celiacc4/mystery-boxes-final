@@ -35,6 +35,7 @@
                     <div class="enlaces">
                         <a href="index.html">Inicio</a>
                         <a href="productos.html">Productos</a>
+                <a href="novedades.html">Novedades</a>
                 <a href="simulador.html">Abre tu caja</a>
                         <a href="index.html#como-funciona">Cómo funciona</a>
                         <a href="index.html#contacto">Contacto</a>
@@ -95,7 +96,7 @@
                 <div class="col-md-7 col-lg-8">
                     <form class="needs-validation" id="form-pago" novalidate>
 
-                        <h2>Datos de envío</h2>
+                        <h2 id="titulo-datos">Datos de envío</h2>
 
                         <div class="row g-3">
 
@@ -265,6 +266,30 @@
             'use strict';
 
             const formulario = document.getElementById('form-pago');
+
+            // Reserva de experiencia: oculta los campos de envío y muestra la reserva en el resumen
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('tipo') === 'experiencia') {
+                document.getElementById('titulo-datos').textContent = 'Datos del titular';
+
+                ['pago-direccion', 'pago-pais', 'pago-ciudad', 'pago-cp'].forEach((id) => {
+                    const campo = document.getElementById(id);
+                    campo.required = false;
+                    campo.closest('[class^="col-"]').hidden = true;
+                });
+
+                const items = document.querySelectorAll('.list-group-item');
+
+                // Primera línea: la experiencia reservada
+                items[0].querySelector('h6').textContent = params.get('nombre') || 'Experiencia';
+                items[0].querySelector('small').textContent = params.get('detalle') || '';
+                items[0].querySelector('span:last-child').textContent = params.get('total') || '';
+
+                // Solo hay una experiencia, así que se quita la segunda línea
+                items[1].remove();
+                items[2].querySelector('strong').textContent = params.get('total') || '';
+                document.querySelector('.badge.rounded-pill').textContent = '1';
+            }
             const camposTarjeta = document.getElementById('campos-tarjeta');
             const inputsTarjeta = camposTarjeta.querySelectorAll('input');
             const metodoTarjeta = document.getElementById('pago-tarjeta');
@@ -293,7 +318,12 @@
                     event.stopPropagation();
                 } else {
                     // Aquí iría la pasarela de pago. Nunca se deben enviar los datos de la tarjeta sin cifrar.
-                    mostrarAviso('Pedido recibido', 'Todavía no hay pasarela de pago conectada, así que el pedido no se ha cobrado.');
+                    if (params.get('tipo') === 'experiencia') {
+                        // Tras pagar, se abre la sorpresa en la página de confirmación
+                        window.location.href = 'confirmacion-experiencia.html' + window.location.search;
+                    } else {
+                        mostrarAviso('Pedido recibido', 'Todavía no hay pasarela de pago conectada, así que el pedido no se ha cobrado.');
+                    }
                 }
 
                 formulario.classList.add('was-validated');

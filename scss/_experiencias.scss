@@ -1,0 +1,275 @@
+@use 'variables';
+
+/* Novedades: experiencias para regalar (componentes de Bootstrap con los colores del proyecto) */
+
+.pagina-experiencias {
+    padding: 50px 0 60px;
+    text-align: center;
+}
+
+.pagina-experiencias h1 {
+    margin-bottom: 10px;
+}
+
+.intro-experiencias {
+    max-width: 680px;
+    margin: 0 auto 30px;
+    color: variables.$texto;
+    line-height: 1.7;
+}
+
+/* Imagen de cada experiencia (con color por categoría, ya que no hay fotos) */
+.imagen-experiencia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 190px;
+    color: variables.$blanco;
+}
+
+.imagen-experiencia span {
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Fotos de cada experiencia, con un velo azul para que la etiqueta se lea bien */
+.imagen-cena,
+.imagen-brunch,
+.imagen-hotel,
+.imagen-tren {
+    background-color: variables.$azul-oscuro;
+    background-position: center;
+    background-size: cover;
+}
+
+.imagen-cena {
+    background-image: linear-gradient(rgba(25, 53, 104, 0.25), rgba(25, 53, 104, 0.25)), url('../img/experiencia-cena.webp');
+}
+
+.imagen-brunch {
+    background-image: linear-gradient(rgba(25, 53, 104, 0.25), rgba(25, 53, 104, 0.25)), url('../img/experiencia-brunch.webp');
+}
+
+.imagen-hotel {
+    background-image: linear-gradient(rgba(25, 53, 104, 0.25), rgba(25, 53, 104, 0.25)), url('../img/experiencia-hotel.webp');
+}
+
+.imagen-tren {
+    background-image: linear-gradient(rgba(25, 53, 104, 0.25), rgba(25, 53, 104, 0.25)), url('../img/experiencia-tren.webp');
+}
+
+.imagen-grande {
+    height: 340px;
+    border-radius: 14px;
+}
+
+.imagen-grande span {
+    font-size: 18px;
+}
+
+/* Tarjeta de experiencia (card de Bootstrap) */
+.tarjeta-experiencia {
+    overflow: hidden;
+    border: 1px solid #eee4c4;
+    border-radius: 12px;
+    background-color: variables.$blanco;
+    box-shadow: 0 4px 12px rgba(25, 53, 104, 0.10);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-experiencia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(25, 53, 104, 0.18);
+}
+
+.tarjeta-experiencia .card-body {
+    text-align: left;
+}
+
+.tarjeta-experiencia .card-title {
+    color: variables.$azul-oscuro;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+}
+
+.tarjeta-experiencia .card-text {
+    color: #5d6573;
+    font-size: 12px;
+}
+
+.precio-experiencia {
+    margin: 10px 0 0;
+    color: variables.$rojo;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.badge-categoria {
+    padding: 6px 10px;
+    background-color: #E5ECFA;
+    color: variables.$azul-oscuro;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Detalle de la experiencia */
+.detalle-experiencia {
+    text-align: left;
+}
+
+.detalle-experiencia h1 {
+    margin: 12px 0 15px;
+    font-size: 28px;
+}
+
+.detalle-experiencia h2 {
+    color: variables.$azul-oscuro;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.aviso-demo {
+    background-color: #E5ECFA;
+    border: 2px solid variables.$azul-oscuro;
+    border-radius: 12px;
+    color: variables.$azul-oscuro;
+    font-size: 13px;
+}
+
+.precio-detalle {
+    margin-bottom: 20px;
+    color: variables.$rojo;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.detalle-experiencia .list-group-item {
+    border-color: #eee4c4;
+    color: variables.$texto;
+    font-size: 13px;
+}
+
+.detalle-experiencia legend {
+    color: variables.$azul-oscuro;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.detalle-experiencia .form-label {
+    color: variables.$azul-oscuro;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.detalle-experiencia .form-control {
+    padding: 12px;
+    border: 1px solid #cbd2df;
+    border-radius: 6px;
+    background-color: #fffefa;
+    color: variables.$texto;
+    font-size: 13px;
+}
+
+.detalle-experiencia .form-control:focus {
+    border-color: variables.$azul;
+    box-shadow: 0 0 0 0.2rem rgba(49, 91, 176, 0.25);
+}
+
+.detalle-experiencia .input-personas {
+    max-width: 120px;
+}
+
+.detalle-experiencia .form-text {
+    font-size: 12px;
+}
+
+.resumen-reserva {
+    background-color: variables.$blanco;
+    border: 1px solid #eee4c4;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(25, 53, 104, 0.10);
+}
+
+.resumen-reserva .card-body p {
+    font-size: 13px;
+}
+
+.total-reserva {
+    color: variables.$azul-oscuro;
+    font-size: 16px;
+}
+
+.total-reserva strong {
+    color: variables.$rojo;
+}
+
+/* Botones con los colores del proyecto */
+.pagina-experiencias .btn,
+.detalle-experiencia .btn {
+    border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pagina-experiencias .btn:hover,
+.detalle-experiencia .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(25, 53, 104, 0.15);
+}
+
+.pagina-experiencias .btn-outline-primary,
+.detalle-experiencia .btn-outline-primary {
+    border-color: variables.$azul;
+    color: variables.$azul;
+}
+
+.pagina-experiencias .btn-outline-primary:hover,
+.detalle-experiencia .btn-outline-primary:hover {
+    background-color: variables.$azul;
+    border-color: variables.$azul;
+    color: variables.$blanco;
+}
+
+.pagina-experiencias .btn-check:checked + .btn,
+.detalle-experiencia .btn-check:checked + .btn {
+    background-color: variables.$azul;
+    border-color: variables.$azul;
+    color: variables.$blanco;
+}
+
+.detalle-experiencia .btn-primary {
+    background-color: variables.$azul;
+    border-color: variables.$azul;
+    color: variables.$blanco;
+}
+
+.detalle-experiencia .btn-primary:hover {
+    background-color: variables.$azul-oscuro;
+    border-color: variables.$azul-oscuro;
+    color: variables.$blanco;
+}
+
+.detalle-experiencia .btn-primary:disabled {
+    background-color: #9aaed3;
+    border-color: #9aaed3;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Página de confirmación de la sorpresa */
+.pagina-confirmacion {
+    padding: 50px 0 60px;
+}
+
+.pagina-confirmacion h1 {
+    margin-bottom: 10px;
+}
+
+.pagina-confirmacion .aviso-demo {
+    max-width: 680px;
+}
